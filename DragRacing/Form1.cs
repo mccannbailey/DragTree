@@ -65,22 +65,27 @@ namespace DragRacing
                 reactionLabel.Text = "FOUL START";
                 watch.Stop();
                 raceTimer.Enabled = false;
+                
             }
         }
         private void resetButton_Click(object sender, EventArgs e)
         {
+            start = false;
             lights = 1;
             watch.Reset();
             watch.Stop();
             raceTimer.Enabled = false;
-            reactionLabel.Text = "0.000";
-
+            reactionLabel.Text = "0.000 milliseconds";
+            #region reset light colours
             light1Row1.BackColor = Color.DimGray;
             light2Row1.BackColor = Color.DimGray;
             light1Row2.BackColor = Color.DimGray;
             light2Row2.BackColor = Color.DimGray;
             light1Row3.BackColor = Color.DimGray;
-            light2Row3.BackColor = Color.DimGray; 
+            light2Row3.BackColor = Color.DimGray;
+            greenLight1.BackColor = Color.DarkGreen;
+            greenLight2.BackColor = Color.DarkGreen;
+            #endregion   
         }
     }
 }
