@@ -14,7 +14,7 @@ namespace DragRacing
     public partial class Form1 : Form
     {
         Stopwatch watch;
-        int lights = 1;
+        int lights = 1, highScore;
         bool start;
         public Form1()
         {
@@ -53,21 +53,34 @@ namespace DragRacing
                     break;
             }
         }
+
         private void goButton_Click(object sender, EventArgs e)
         {
             if (start == true)
             {
                 watch.Stop();                
                 reactionLabel.Text = Convert.ToString(watch.ElapsedMilliseconds + " milliseconds");
+
+                //highscore funtion
+                if (highScore == 0)     
+                {
+                    highScore = Convert.ToInt32(watch.ElapsedMilliseconds);
+                    highScoreLabel.Text = Convert.ToString(highScore) + " milliseconds";
+                }
+                else if (watch.ElapsedMilliseconds < highScore)
+                {
+                    highScore = Convert.ToInt32(watch.ElapsedMilliseconds);
+                    highScoreLabel.Text = Convert.ToString(highScore) + " milliseconds";
+                }                                
             }
             else if (start != true)
             {
                 reactionLabel.Text = "FOUL START";
                 watch.Stop();
-                raceTimer.Enabled = false;
-                
+                raceTimer.Enabled = false;                
             }
         }
+
         private void resetButton_Click(object sender, EventArgs e)
         {
             start = false;

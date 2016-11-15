@@ -43,6 +43,8 @@
             this.raceTimer = new System.Windows.Forms.Timer(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.reactionLabel = new System.Windows.Forms.Label();
+            this.scoreTitleLabel = new System.Windows.Forms.Label();
+            this.highScoreLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // light1Row1
@@ -177,12 +179,33 @@
             this.reactionLabel.TabIndex = 14;
             this.reactionLabel.Text = "0.000 milliseconds";
             // 
+            // scoreTitleLabel
+            // 
+            this.scoreTitleLabel.AutoSize = true;
+            this.scoreTitleLabel.Font = new System.Drawing.Font("Courier New", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.scoreTitleLabel.Location = new System.Drawing.Point(277, 32);
+            this.scoreTitleLabel.Name = "scoreTitleLabel";
+            this.scoreTitleLabel.Size = new System.Drawing.Size(98, 17);
+            this.scoreTitleLabel.TabIndex = 15;
+            this.scoreTitleLabel.Text = "Highscore:";
+            // 
+            // highScoreLabel
+            // 
+            this.highScoreLabel.AutoSize = true;
+            this.highScoreLabel.Font = new System.Drawing.Font("Courier New", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.highScoreLabel.Location = new System.Drawing.Point(277, 55);
+            this.highScoreLabel.Name = "highScoreLabel";
+            this.highScoreLabel.Size = new System.Drawing.Size(0, 17);
+            this.highScoreLabel.TabIndex = 16;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
-            this.ClientSize = new System.Drawing.Size(335, 261);
+            this.ClientSize = new System.Drawing.Size(427, 250);
+            this.Controls.Add(this.highScoreLabel);
+            this.Controls.Add(this.scoreTitleLabel);
             this.Controls.Add(this.reactionLabel);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.goButton);
@@ -221,6 +244,8 @@
         private System.Windows.Forms.Timer raceTimer;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label reactionLabel;
+        private System.Windows.Forms.Label scoreTitleLabel;
+        private System.Windows.Forms.Label highScoreLabel;
     }
 }
 
